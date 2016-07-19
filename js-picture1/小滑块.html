@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>鼠标拖动小方块</title>
+        <style type="text/css">
+            .lineDiv{position:absolute;height:5px;font-size:0;line-height:0;background:#999;width:500px;top:100px;left:50%;margin-left:-250px}
+            .lineDiv .minDiv{position:absolute;top:-5px;left:0;width:15px;height:15px;background:#000;cursor:pointer}
+        </style>
+    </head>
+    <body>
+        <center><h3>用鼠标拖动小方块</h3></center>
+        <div id="lineDiv" class="lineDiv">
+            <div id="minDiv" class="minDiv"></div>
+        </div>
+        <script>
+             var scrollbar = document.getElementById("minDiv");
+             var diffX = 0, diffY = 0; 
+             scrollbar.onmousedown = function(e){
+            var ev = e || window.envent;
+            diffX = ev.clientX - this.offsetLeft;
+            diffY = ev.clientY - this.offsetTop;
+            document.onmousemove = function(e){
+             var ev = e || window.envent;  
+             var l =  ev.clientX - diffX;
+             var t = ev.clientY - diffY;
+             if( l<50 ){
+                 l = 0;
+             }else if( l > scrollbar.parentNode.clientWidth - scrollbar.clientWidth - 50 ){
+                 l = scrollbar.parentNode.clientWidth - scrollbar.clientWidth;
+             }
+             if( t!==-5 ){
+                 t = -5;
+             }
+             scrollbar.style.left = l +'px';
+             scrollbar.style.top = t +'px';
+             
+            } 
+            document.onmouseup = function(){
+            document.onmousemove =   document.onmouseup = null;   
+                
+            }
+            return false;
+              
+             }
+        </script>   
+    </body>
+</html>

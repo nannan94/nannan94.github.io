@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>剪裁图片</title>
+	<style type="text/css">
+       body{background: #333;}
+       #box{position: absolute;top: 100px;left: 200px;width: 457px;height: 277px;}
+       #img1{opacity: 0.7;position: absolute;top: 0;left: 0;}
+       #img2{position: absolute;top: 0;left: 0; clip: rect(0,200px,200px,0);}
+       #main{border: 1px solid #fff;width: 200px;height: 200px;position: absolute;}
+       .minDiv{position: absolute;width: 8px;height: 8px;background: #fff;}
+       .left-up{top:-4px;left: -4px;cursor: nw-resize;}
+       .up{left: 50%;margin-left: -4px;top: -4px;cursor: n-resize;}
+       .right-up{right: -4px;top: -4px;cursor: ne-resize;}
+       .right{right: -4px;top: 50%;margin-top: -4px;cursor: w-resize}
+       .right-down{right: -4px;bottom: -4px;cursor: se-resize;}
+       .down{bottom: -4px;left: 50%;margin-left: -4px;cursor: s-resize;}
+       .left-down{left: -4px;bottom: -4px;cursor: sw-resize;}
+       .left{left: -4px;top: 50%;margin-top: -4px;cursor: w-resize;}
+       #preview{position: absolute;width: 457px;height: 277px; top: 100px;left: 670px;}
+       #img3{position: absolute;}
+	</style>
+	<script type="text/javascript" src="jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+</head>
+<body>
+<div id="box">
+   <img src="img/task6_6.jpg" id="img1">
+   <img src="img/task6_6.jpg" id="img2">
+   <div id="main">
+   	<div id="left-up" class="minDiv left-up"></div>
+   	<div id="up" class="minDiv up"></div>
+   	<div id="right-up" class="minDiv right-up"></div>
+   	<div id="right" class="minDiv right"></div>
+   	<div id="right-down" class="minDiv right-down"></div>
+   	<div id="left-down" class="minDiv left-down"></div>
+   	<div id="left" class="minDiv left"></div>
+   	<div id="down" class="minDiv down"></div>
+   </div>
+   </div>
+   <div id="preview"><img src="img/task6_6.jpg" id="img3"></div>
+</body>
+</html>
