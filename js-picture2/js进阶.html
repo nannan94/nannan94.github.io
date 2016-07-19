@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系好安全带,准备启航</title>
+<!--引入外部文件的方式-->
+
+<script type="text/javascript">
+//  var infos=new Array(
+//     ['小A','女',21,'大一'],['小B','男',23,'大三'],
+//     ['小C','男',24,'大四'],['小D','女',21,'大一'],
+//     ['小E','女',22,'大四'],['小F','男',21,'大一'],
+//     ['小G','女',22,'大二'],['小H','女',20,'大三'],
+//     ['小I','女',20,'大一'],['小J','男',20,'大三']);
+//  var i;
+//  //第一次筛选，找出都是大一的信息
+//  document.write("第一次筛选"+"<br>")
+//  for(i=0;i<infos.length;i++){
+//     if(infos[i][3]=="大一"){
+//         document.write(infos[i]+"<br>");
+//     }    
+//  }
+  
+//  //第二次筛选，找出都是女生的信息
+//  document.write("<br>"+"第二次筛选"+"<br>")
+//  for(i=0;i<infos.length;i++){
+//     if(infos[i][3]=="大一" && infos[i][1]=="女"){
+//         document.write(infos[i][0]+"<br>")
+//     }
+//  }
+//  document.write("第一次筛选：<br />")
+
+//  for(i=0;i<infos.length;i++){
+  
+//           // infos[i][j];
+//        if(infos[i][3]=="大一"){
+//           document.write(infos[i]+'<br>')
+      
+      
+//       }
+//  }
+
+//  //第二次筛选，找出都是女生的信息
+
+//   document.write("<br/>第二次筛选：<br />");
+//   for( i = 0;i<=10;i++){
+ 
+        
+//         if(infos[i][3]=="大一"){
+       
+//       switch(infos[i][1]){
+//       case '女':
+//      document.write(infos[i][0]+'<br/>');  
+//       break;
+//   }
+      
+//       }
+// }
+  var date = new Date();
+  var arr= new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+  var week = arr[date.getDay()] ;
+  var arr1= new Array("01","02","03","04","05","06","07","08","09","10","11","12");
+  var month =arr1[date.getMonth()] ;
+   document.write(date.getFullYear()+"年"+month+"月"+date.getDate()+"日"+"&nbsp"+week+"---");
+
+ // var scoreStr =[["小明",87],["小花",81],["小红",97],["小天",76],["小张",74],["小小",94],["小西",90],["小伍",76],["小迪",64],["小曼",76]];
+   var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+ var score=new Array();
+ score=scoreStr.split(";");
+ // document.write(score+"<br>");
+ // var sc=new Array();
+ var sum=0;//绝对不可是sum=“”；
+ for(var i=0;i<score.length;i++){
+  sum += parseInt(score[i].substr(score[i].indexOf(":")+1));
+  
+ }
+ document.write("班级总分为:"+sum);
+// var sorceStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+//   var sourceArr = sorceStr.split(";");
+//   //document.write(sourceArr);//test
+//    //从数组中将成绩撮出来，然后求和取整，并输出。
+//    // var score = new Array();
+//    var sum = 0;
+//    for (var i = 0; i < sourceArr.length; i ++) {
+//        sum += parseInt(sourceArr[i].substr(sourceArr[i].indexOf(":")+1));
+//        //document.write("<br>" + sum);//test
+//    }
+//    document.write("--班级总分为:" + sum);
+//    document.write(",班级平均分为(保留整数):" + Math.round(sum/sourceArr.length))
+  </script>
+
+</body>
+</html>

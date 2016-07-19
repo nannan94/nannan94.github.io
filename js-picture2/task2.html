@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<body>
+<!--页面布局-->
+    <!--图片相关属性设置-->
+   <div>
+	<img style="position:absolute;left:0;top:0" src="http://img.mukewang.com/53577ee900016c2102080260.jpg" id="myImage"  /><br/>
+<!--滑动按钮设置-->
+   <input type="button" id="btn" value="移动"style="position:absolute;left:20px;top:260px;"></input>   
+
+
+</div>
+<script>
+	window.onload = function(){
+		var img = document.getElementById("myImage");
+		var btn = document.getElementById("btn");
+		
+		//绑定点击事件
+		btn.onclick = function(){
+			imgSlide();	//点击按钮时执行滑动函数
+		}
+		
+		var maxLeft = 700;//向右滑动的极限值
+		//实现滑动函数
+		function imgSlide(){
+
+			 var endLeft=parseInt(img.style.left)+300; //每次点击后向右滑动300px
+			var slideTimer = setInterval(function(){
+		        var imgLeft=parseInt(img.style.left);                                   //现在距离左边的距离
+				if(imgLeft < endLeft){
+					if(imgLeft < maxLeft){
+					imgLeft = imgLeft+20;	//将图片的左偏移（left值）增加20px，注意单位
+					img.style.left = imgLeft+"px";
+					}else{
+					alert("最you边了")
+                    clearInterval(slideTimer);
+//终止定时器函数
+						
+					}
+				}else{
+						clearInterval(slideTimer);	
+				}
+			},10);	
+		}
+	}
+</script>
+</body>
+</html>
