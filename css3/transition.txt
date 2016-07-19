@@ -1,0 +1,99 @@
+CSS动画：transition 的用法介绍
+时间 2015-12-29 12:56:18  WebHek
+原文  http://www.webhek.com/css-animation-transition
+主题 CSS
+CSS中最简单的动画叫做 transition(转变) 。通常，当一个元素的样式属性值发生变化时，我们会立即看到页面元素发生变化，也就是页面元素从旧的属性值立即变成新的属性值的效果。 Transition(转变) 能让页面元素不是立即的、而是慢慢的从一种状态变成另外一种状态，从而表现出一种动画过程。
+
+这些转变效果可以用下列属性来指定：
+
+transition-property – 什么属性将用动画表现，例如, opacity。
+
+transition-duration – 转变过程持续时间。
+
+transition-timing-function – 转变时使用的调速函数(比如, linear、 ease-in 或自定义的 cubic bezier 函数)。
+
+transition – 三种属性的合体简写。
+
+下面是一个例子：
+
+div {
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+div:hover {
+  opacity: 0;
+}
+当你用鼠标放在这个方块上时，这个方块会表现淡入淡出式的缓慢消失效果，是一种渐变，而不是简单的突然消失。
+
+这个三个 Transition 属性中的每个属性都支持多个参数值，参数值之间用逗号分隔，这样能够用一个样式规则制定多种CSS属性的变化。需要注意的是，三个 Transition 属性中的多个参数值的顺序一定要一致。
+
+例如：
+
+div {
+  transition-property: opacity, left;
+  transition-duration: 2s, 4s;
+}
+上面的演示规则中， opacity 的变化过程将会持续2秒，而 left 值的变化过程将会持续4秒。
+
+还有一些更复杂的属性也能表现出动画效果，比如，CSS3中新出现的 transform 属性。下面就是一个使用 transform 和 transition 属性实现简单旋转效果的例子：
+
+<div style="transition: transform 3s ease-in" 
+  onclick="this.style.transform='rotate(360deg)'">
+点击这个方块，能让它旋转起来。
+</div>
+点击这个方块，能让它旋转起来。
+
+方块的边框(border)属性也没有做出动画效果。下面是一个简单的边框变化演示，当你的鼠标在方块上悬停移动时，可以看到方块的边框有慢慢变粗、变细以及颜色的变化。
+
+鼠标放到这里，观察边框粗细、颜色的变化。
+
+需要注意的是，上面的利用鼠标悬停演示的动画，当鼠标离开目标方块后，动画效果会反向发生，恢复到原状。每次只要这些属性值方式变化，动画效果就会从属性旧值到新值的简单再次发生。
+
+理解这种 transition 的关键点：
+
+(1) 这些动画是暗含的。你的JavaScript脚本和CSS都像往常一样编写。动画只会简单的发生在属性值发生变化的时候。
+
+(2) 不支持这些 transition 属性的浏览器不会有任何动画发生。你的JavaScript和css不会对正常的显示带来任何负面影响。
+
+下面是 transition 属性的分解介绍。所有的这些属性都可以跟多个属性值，用逗号分隔。
+
+transition-property
+
+允许值: none | all | <属性名>
+
+初始值: all
+
+描述: 指明什么属性将触发动画效果。 none 值表示没有变化。 all 值表示所有可以动画演示的属性都可以触发动画效果。否则，只有指定的属性值方式变化才能触发动画效果。
+
+transition-duration
+
+允许值: <时间>
+
+初始值: 0
+
+描述: 指明动画持续的时间长度。
+
+transition-timing-function
+
+允许值: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(x1, y1, x2, y2)
+
+初始值: ease
+
+描述: 这个 transition-timing-function 属性描述了动画随着时间运动的速度-时间函数。可以使用几种常见的调速函数，也可以使用立方贝塞尔(cubic bezier)函数加控制点来自定义动画的变换速度方式。对于立方贝塞尔曲线方程，我们需要两个点的（X,Y）来控制曲线。点 P0 固定是 (0,0) 而 P3 固定是 (1,1)。有了这个四个点就能计算出一条立方贝塞尔曲线。
+
+这些调速函数的意思是这样的：
+
+linear – 线性函数，返回值一个输入值一样的结果。
+
+ease – 减缓函数, 是缺省值, 等同于 cubic-bezier(0.25, 0.1, 0.25, 1.0).
+
+ease-in – 等同于 cubic-bezier(0.42, 0, 1.0, 1.0).
+
+ease-out – 等同于 cubic-bezier(0, 0, 0.58, 1.0).
+
+ease-in-out – 等同于 cubic-bezier(0.42, 0, 0.58, 1.0)
+
+cubic-bezier – P0 和 P3 两个点分别是 (0,0) 和 (1,1) 。再加上另外两个点 (x1, y1, x2, y2) 就定义了一个立方贝塞尔曲线。
+
+在将来的文章里我将会介绍更多的关于 transitions（变换） 的CSS动画知识。比如：显式动画。
