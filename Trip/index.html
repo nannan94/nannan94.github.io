@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>思密达</title>
+	<script type="text/javascript" src="tool.js"></script>
+	<script type="text/javascript" src="base.js"></script>
+	<script type="text/javascript" src="chajian.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="header">
+	<div class="center">
+		<nav class="link">
+			<ul>
+				<li class="active"><a href="index.html">首页</a></li>
+				<li><a href="information.html"><span class="xs-hidden">旅游</span>资讯</a></li>
+				<li><a href="ticket.html">机票<span class="xs-hidden">订购</span></a></li>
+				<li class="xs-hidden"><a href="scenery.html">风景欣赏</a></li>
+				<li><a href="about.html"><span class="xs-hidden">关于</span>公司</a></li>
+			</ul>
+		</nav>
+        <nav class="link1">
+            <div class="member">个人中心 
+				<ul class="member_ul">
+					<li><a href="###">设置</a></li>
+					<li><a href="###">换肤</a></li>
+					<li><a href="###">帮助</a></li>
+					<li><a href="###">退出</a></li>
+				</ul>
+			</div>
+            <div class="reg">注册</div>
+            <div class="login">登录</div>
+            <div class="info"></div>
+            </nav>
+	</div>
+	<div id="login">
+	 <h2><img src="img/close.png" alt="" class="close"/>网站登录</h2>
+	    <div class="user">账号：<input type="text" name="user" class="text"/></div>	
+		<div class="pass">密码：<input type="password" name="pass" class="text"/></div>
+        <div class="button"><input type="button" class="submit" value=""></div>
+        <div class="other">注册新用户|忘记密码？</div>
+	</div>
+	<div id="reg">
+	<h2><img src="img/close.png" alt="" class="close" />会员注册</h2>
+	<form name="reg">
+	<dl>
+		<dd>用 户 名： <input type="text" name="user" class="text" /> 
+		    <span class="info info_user">请输入用户名，2~20位，由字母、数字和下划线组成！</span>
+			<span class="error error_user">输入不合法，请重新输入！</span>
+			<span class="succ succ_user">可用</span></dd>
+		<dd>密　　码：<input type="text" name="pass" class="text" />
+			    <span class="info info_pass">
+				<p>安全级别：<strong class="s s1">■</strong><strong class="s s2">■</strong><strong class="s s3">■</strong> <strong class="s s4" style="font-weight:normal;"></strong></p>
+				<p><strong class="q1" style="font-weight:normal;">○</strong> 6-20 个字符</p>
+				<p><strong class="q2" style="font-weight:normal;">○</strong> 只能包含大小写字母、数字和非空格字符</p>
+				<p><strong class="q3" style="font-weight:normal;">○</strong> 大、小写字母、数字、非空字符，2种以上</p>
+			</span>
+			<span class="error error_pass">输入不合法，请重新输入！</span>
+			<span class="succ succ_pass">可用</span>
+		</dd>
+		<dd>确认密码：<input type="password" name="notpass" class="text" />
+		    <span class="info info_notpass">请再一次输入密码！</span>
+			<span class="error error_notpass">密码不一致，请重新输入！</span>
+			<span class="succ succ_notpass">可用</span></dd>
+		<dd><span style="vertical-align:-2px;">提　　问：</span><select name="ques">
+							<option value="0">- - - - 请选择 - - - -</option>
+							<option value="1">- - 您最喜欢吃的菜</option>
+							<option value="2">- - 您的狗狗的名字</option>
+							<option value="3">- - 您的出生地</option>
+							<option value="4">- - 您最喜欢的明星</option>
+								 </select></dd>
+		<dd>回　　答：<input type="text" name="ans" class="text" />
+		    <span class="info info_ans">请输入回答，2~32位！</span>
+			<span class="error error_ans">回答不合法，请重新输入！</span>
+			<span class="succ succ_ans">可用</span></dd>
+		<dd>电子邮件：<input type="text" name="email" class="text"  autocomplete="off" />
+		    <span class="info info_email">请输入电子邮件！</span>
+			<span class="error error_email">邮件不合法，请重新输入！</span>
+			<span class="succ succ_email">可用</span>
+			<ul class="all_email">
+				<li><span></span>@qq.com</li>
+				<li><span></span>@163.com</li>
+				<li><span></span>@sohu.com</li>
+				<li><span></span>@sina.com.cn</li>
+				<li><span></span>@gmail.com</li>
+		</ul></dd>
+		<dd class="birthday"><span style="vertical-align:-2px">生　　日：</span> <select name="year">
+									<option value="0">- 年 -</option>
+								  </select> -
+								  <select name="month">
+									<option value="0">- 月 -</option>
+								  </select> -
+								  <select name="day">
+									<option value="0">- 日 -</option>
+								  </select>
+			<span class="error error_birthday">尚未全部选择，请选择！</span>	  
+		</dd>
+		<dd style="height:105px;"><span style="vertical-align:85px">备　　注：</span> <textarea name="ps"></textarea></dd>			
+		<dd style="display:block;" class="ps">还可以输入<strong class="num">200</strong>字</dd>	
+		<dd style="display:none;" class="ps">已超过<strong class="num"></strong>字，<span class="clear">清尾</span></dd>		
+		<dd style="padding:0 0 0 80px;"><input type="button" name="sub" class="submit" /></dd>
+	</dl>
+	</form>
+</div>
+	<div id="screen"></div>
+</header>
+
+<div id="adver">
+	<img src="img/adver.jpg" alt="">
+	<div class="center"></div>
+	<div class="center copy">
+		<input type="text" class="search" placeholder="请输入旅游景点或城市">
+		<button class="button">搜索</button>
+	</div>
+</div>
+
+<div id="tour">
+	<section class="center">
+		<h2>热门旅游</h2>
+		<p>国内旅游、国外旅游、自助旅游、自驾旅游、油轮签证、主题旅游等各种最新热门旅游推荐</p>
+	</section>
+	<figure>
+		<img src="img/tour1.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+			</div>
+			<div class="info">
+				<em class="sat">满意度 77%</em>
+				<span class="price">¥ <strong>2864</strong> 起</span>
+			</div>
+			<div class="type">国内长线</div>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="img/tour2.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;马尔代夫双鱼岛Olhuveli4晚6日自助游&gt;</strong> 上海出发，机+酒 包含:早晚餐+快艇
+			</div>
+			<div class="info">
+				<em class="sat">满意度 97%</em>
+				<span class="price">¥ <strong>8039</strong> 起</span>
+			</div>
+			<div class="type">出境长线</div>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="img/tour3.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;海南双飞5日游&gt;</strong> 含盐城接送，全程挂牌四星酒店，一价全含，零自费“自费项目”免费送
+			</div>
+			<div class="info">
+				<em class="sat">满意度 90%</em>
+				<span class="price">¥ <strong>2709</strong> 起</span>
+			</div>
+			<div class="type">自助旅游</div>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="img/tour4.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;富山-大阪-东京8日游&gt;</strong> 暑期亲子，2天自由，无导游安排自费项目，全程不强迫购物
+			</div>
+			<div class="info">
+				<em class="sat">满意度 97%</em>
+				<span class="price">¥ <strong>9499</strong> 起</span>
+			</div>
+			<div class="type">自助旅游</div>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="img/tour5.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;法瑞意德12日游&gt;</strong> 4至5星，金色列车，少女峰，部分THE MALL
+			</div>
+			<div class="info">
+				<em class="sat">满意度 97%</em>
+				<span class="price">¥ <strong>9199</strong> 起</span>
+			</div>
+			<div class="type">国内短线</div>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="img/tour6.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;巴厘岛6日半自助游&gt;</strong> 蓝梦出海，独栋别墅，悦榕庄下午茶，纯玩
+			</div>
+			<div class="info">
+				<em class="sat">满意度 95%</em>
+				<span class="price">¥ <strong>6488</strong> 起</span>
+			</div>
+			<div class="type">出境长线</div>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="img/tour7.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;塞舌尔迪拜9日自助游&gt;</strong> 一游两国，4晚塞舌尔，2晚迪拜，香港EK往返
+			</div>
+			<div>
+				<em class="sat">满意度 100%</em>
+				<span class="price">¥ <strong>9669</strong> 起</span>
+			</div>
+			<div class="type">游轮观光</div>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="img/tour8.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;花样姐姐土耳其9日或10日游&gt;</strong> 最高立减3000！中餐六菜一汤+土耳其当地美食满足您挑剔味蕾
+			</div>
+			<div class="info">
+				<em class="sat">满意度 93%</em>
+				<span class="price">¥ <strong>9999</strong> 起</span>
+			</div>
+			<div class="type">出境长线</div>
+		</figcaption>
+	</figure>
+	<figure>
+		<img src="img/tour9.jpg" alt="热门旅游">
+		<figcaption>
+			<div class="tour_title">
+				<strong class="title">&lt;大阪-京都-箱根双飞6日游&gt;</strong> 盐城直飞，不走回头路，境外无自费，超值之旅
+			</div>
+			<div class="info">
+				<em class="sat">满意度 100%</em>
+				<span class="price">¥ <strong>5284</strong> 起</span>
+			</div>
+			<div class="type">国内短线</div>
+		</figcaption>
+	</figure>
+</div>
+
+<footer id="footer">
+	<div class="top sm-hidden">
+		<div class="block left">
+			<h2>合作伙伴</h2>
+			<hr>
+			<ul>
+				<li>途牛旅游网</li>
+				<li>驴妈妈旅游网</li>
+				<li>携程旅游</li>
+				<li>中国青年旅行社</li>
+			</ul>
+		</div>
+		<div class="block center">
+			<h2>旅游FAQ</h2>
+			<hr>
+			<ul>
+				<li>旅游合同签订方式？</li>
+				<li>儿童价是基于什么制定的？</li>
+				<li>旅游的线路品质怎么界定的？</li>
+				<li>单房差是什么？</li>
+				<li>旅游保险有那些种类？</li>
+			</ul>
+		</div>
+		<div class="block right">
+			<h2>联系方式</h2>
+			<hr>
+			<ul>
+				<li>微博：</li>
+				<li>邮件：</li>
+				<li>地址：</li>
+			</ul>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="version sm-visible">
+		客户端 | 触屏版 | 电脑版
+	</div>
+	<div class="bottom">
+		数字东林"由 数字化校园建设办公室（网络信息中心）提供技术支持<span class="sm-hidden"> | 旅行社经营许可证</span>
+	</div>
+</footer>
+	
+</body>
+</html>
