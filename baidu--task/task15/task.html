@@ -1,0 +1,132 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+<script type="text/javascript">
+
+/**
+ * getData方法
+ * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+ * 返回一个数组，格式见函数中示例
+ */
+// var $ = function (id) {
+//   return document.getElementById(id);
+// }//id选择器
+
+ var ul = document.getElementById('source'); 
+ var list = ul.children;//提取li
+ 
+ function getData() {
+        /*
+         coding here
+         */
+ 
+ var data = []; 
+  
+ for(var i=0;i<list.length;i++) { 
+ var record = []; 
+ var text = list[i].textContent;//提取li中的内容 
+ var b = list[i].getElementsByTagName('b')[0];//提取li中的b中内容 
+  
+ record.push(text.substring(0,text.indexOf('空气质量')));//substring标签作用（用于提取字符串中介于于两个指定参数的字符）
+
+                                                    //push()标签可以在数组的末端加入新的元素，并返回新的数组长度
+
+                                             //（这句话的意思是在text中提取第0个字符到空气质量的字符组成新的text，然后将新的text加入record数组中）
+ 
+ record.push(b.textContent);//（将b中内容加入record中，组成一个新数组，里面有空气质量和b中的） 
+  
+ data.push(record); 
+ } 
+  
+ return data; 
+ alert(data);
+}
+
+
+/**
+ * sortAqiData
+ * 按空气质量对data进行从小到大的排序
+ * 返回一个排序后的数组
+ */
+function sortAqiData(data) {
+    //快速排序
+   //  var len=Math.floor(list.length/2);//获取中间值
+   //  var cur=list.splice(len,1);
+   //  var left=[];//小于中间值的放这里
+   //  var right=[];
+   //  for (var i = 0; i < list.length; i++) {
+   //    //判断
+   //    if(cur>list[i]){
+   //      left.push(list[i]);
+   //    }else{
+   //      right.push(list[i])
+   //    }
+   //  }
+   // return sortAqiData(left).concat(cur,sortAqiData(right));//在一次比较 
+     data.sort(function(first,second){
+            return first[1]-second[1];
+        });
+        return data;
+}
+
+/**
+ * render
+ * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+ * 格式见ul中的注释的部分
+ */
+function render(data,index) {
+    var list='';
+    var num_h=[ "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+    data.forEach(function(record,index){
+      var li;
+      li='<li>第'+num_h[index]+'名：'+record[0]+'空气质量:<b>'+record[1]+'</b></li>';
+      list = list+li;
+    });
+    ul.innerHTML=list;
+};
+
+function btnHandle() {
+  var aqiData = getData();
+  aqiData = sortAqiData(aqiData);
+  render(aqiData);
+}
+
+
+function init() {
+
+  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+  var btn=document.getElementById('sort-btn');
+  btn.onclick=btnHandle;
+}
+
+init();
+
+</script>
+</body>
+</html>

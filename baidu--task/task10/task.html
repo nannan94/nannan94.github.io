@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>flexbox</title>
+    <style type="text/css">
+    .container{
+      display: flex;display: -webkit-flex;
+      align-items: center;/*从中间为轴分开*/
+      justify-content: space-between;/*/伸缩项目会平分在行里。/*/
+    }
+    .container_item_1{
+      border: 1px red solid;
+      padding: 20px;
+      width: 150px;
+      height: 120px;
+       
+    }
+    .container_item_2{
+      border: 1px red solid;
+      padding: 20px;
+      width: 150px;
+      height: 100px;
+     
+    }
+    .container_item_3{
+      border: 1px red solid;
+      padding: 20px;
+      width: 150px;
+      height: 40px;
+     
+    }
+    .container_item_4{
+      border: 1px blue solid;
+      padding: 20px;
+      width: 150px;
+      height: 200px;
+        
+    }
+    @media screen and (max-width: 640px) {
+      .container_item_4{order:-1;}
+      .container{
+        display: flex;display: -webkit-flex;
+        align-items: flex-start;
+        flex-wrap: wrap;/*伸缩容器多行显示*/
+      }
+     /* .container_item_3{ align-self: flex-end; }*/
+    }
+  </style>
+  </head>
+<body>
+<div class="container">
+    <div class="container_item_1">120*150</div>
+    <div class="container_item_2">100*150</div>
+    <div class="container_item_3">40*150</div>
+    <div class="container_item_4">200*150</div>
+  </div>
+</body>
+</html>
