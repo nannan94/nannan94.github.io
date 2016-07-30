@@ -1,0 +1,146 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+html,body{
+	height:100%;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background:#000;
+  color:#fff;
+  text-align:center;
+}
+header, .left, .right{
+	position:absolute;
+}
+header{
+	left:10px;
+	top:10px;
+	right:10px;
+	height:150px;
+}
+header h1{
+	font-size:40px;
+	height:60px;
+	line-height:60px;
+}
+header p{
+  margin-top:10px; 
+}
+.left{
+	left:10px;
+	top:170px;
+	bottom:10px;
+	width:15%;
+}
+.left div{
+	width:100%;
+	height:50px;
+	border:2.5px solid #fff;
+	font-size:26px;
+	border-radius:5px;
+	padding-top:5px;
+}
+.left ul{
+	margin-top:10px;
+	border:solid #fff 1px;
+	border-radius:10px;
+	overflow:auto;
+}
+.left ul li{
+	height:30px;
+	line-height:30px;
+	cursor:pointer;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;/*超出时显示...*/
+}
+.left ul li.selected{
+	color:green;
+}
+.right{
+	top:170px;
+	right:10px;
+	bottom:10px;
+	left:-webkit-calc(15% + 20px);
+	left:calc(15% + 20px);
+}
+.type{
+  width:160px;
+  height:30px;
+  line-height:30px;
+  border:solid #fff 1px;
+  margin-left:46%;
+  list-style: none;
+  border-radius: 5px;
+}
+.type li{
+   width:50px;
+   height:28px;
+   display:inline-block;
+   background-color: #000;
+   cursor:pointer;
+}
+.type li:first-child{
+	border-radius:  5px 0 0 5px;
+}
+.type li:last-child{
+	border-radius: 0 5px 5px 0;
+}
+.type li.selected{
+	background-color: #fff;
+	color:#000;
+}
+input[type = "range"]{
+	-webkit-appearance:none;/*去除他以前的样子*/
+	height:8px;
+	background: #999;
+	border-radius:10px;
+	outline:none;
+}
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance:none;
+	height:12px;
+	width:12px;
+	background: #fff;
+	border-radius:100%;
+}
+/*火狐的写法*/
+input[type="range"]::-moz-range-track{
+	height:8px;
+	background: #999;
+	border-radius:10px;
+	border:none;
+}
+input[type="range"]::-moz-range-thumb{
+	height:12px;
+	width:12px;
+	background: #fff;
+	border:none;
+	border-radius:100%;
+}
+@media screen and (max-width:800px),screen and (max-height:500px){
+	body{
+		font-size:12px;
+	}
+	header{
+	height:80px;
+	}
+	header h1{
+	font-size:24px;
+	height:34px;
+	line-height:34px;
+	}
+	.type li{
+   width:50.5px;
+   height:28px;
+	}
+	.left, .right{
+	top:100px;
+	}
+	.left div{
+		font-size: 	16px;
+	}
+}

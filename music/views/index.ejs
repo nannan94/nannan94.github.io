@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style type="text/css">
+   
+    .all_bg{
+      width: 800px;height: 600px;margin: 0 auto;
+    }
+    #allcanvas{
+      position: relative;
+      width: 800px;
+      height: 600px;
+      margin: 0;
+    }
+    #canvas1{
+      position: absolute;bottom: 0;left: 0;z-index: 1;
+    }
+    #canvas1{
+      position: absolute;bottom: 0;left: 0;z-index: 0;
+    }
+  </style>
+  </head>
+  <body>
+  <header> 
+  	<h1><%= title %></h1>
+  	<ul class="type" id="type">
+  		<li data-type="dot">Dot</li>
+      <li data-type="sea" class="selected">Night</li>
+  		<li data-type="column">Column</li>
+  	</ul>
+  	<p>
+  		Volume<input type="range" name="" id="volume" min="0" max="100" value="60">
+  	</p>
+  </header>
+  <div class="left">
+    <div id="add">Local Music</div>
+  	<ul id="list">
+  		<% music.forEach(function(name){%>
+  		<li title="<%= name %>"><%= name %></li>
+  		<% }) %>
+  	</ul>
+  </div>
+  <div class="right" id="box">
+  </div>
+  <script type="text/javascript" src="/javascripts/MusicVisualizer.js"></script>
+  <script type="text/javascript" src="/javascripts/index.js"></script>
+  </body>
+</html>
